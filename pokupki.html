@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Закупка на 14 дней</title>
+<style>
+  :root { --bg:#ffffff; --card:#f6f7f9; --text:#1f2328; --muted:#6a7079; --accent:#b5541f; --line:#e3e6ea; --done:#9aa0a6; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#16181b; --card:#202328; --text:#eceef1; --muted:#9ba1a9; --accent:#e08a4f; --line:#30343a; --done:#6b7078; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; padding:20px 16px 60px; }
+  .wrap { max-width:640px; margin:0 auto; }
+  h1 { font-size:1.5rem; margin:0 0 4px; }
+  .sub { color:var(--muted); margin:0 0 18px; font-size:.92rem; line-height:1.4; }
+  .tabs { display:flex; gap:8px; margin:0 0 14px; flex-wrap:wrap; }
+  .tabs button { flex:1; min-width:120px; padding:11px 10px; border:1px solid var(--line); background:var(--card); color:var(--text); border-radius:8px; font-size:.95rem; cursor:pointer; }
+  .tabs button.on { background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
+  section { display:none; } section.on { display:block; }
+  h2 { font-size:1.1rem; margin:6px 0 4px; }
+  .lead { color:var(--muted); font-size:.88rem; margin:0 0 6px; }
+  h3 { font-size:.95rem; margin:18px 0 6px; color:var(--accent); }
+  ul { list-style:none; margin:0; padding:0; border-top:1px solid var(--line); }
+  li { border-bottom:1px solid var(--line); }
+  label { display:grid; grid-template-columns:24px 1fr auto; gap:2px 10px; align-items:start; padding:10px 2px; cursor:pointer; }
+  input { width:20px; height:20px; margin:1px 0 0; accent-color:var(--accent); }
+  .nm { font-size:.97rem; }
+  .q { font-size:.9rem; color:var(--muted); text-align:right; white-space:nowrap; }
+  .nt { grid-column:2 / 4; font-size:.8rem; color:var(--muted); }
+  @media (max-width:420px) { label { grid-template-columns:24px 1fr; } .q { grid-column:2; text-align:left; white-space:normal; } }
+  label:has(input:checked) .nm, label:has(input:checked) .q { color:var(--done); text-decoration:line-through; }
+  .box { background:var(--card); border-radius:10px; padding:12px 14px; margin:18px 0 0; font-size:.9rem; line-height:1.45; }
+  .reset { margin-top:22px; width:100%; padding:12px; background:transparent; border:1px solid var(--line); color:var(--muted); border-radius:8px; font-size:.9rem; cursor:pointer; }
+  .count { color:var(--muted); font-size:.85rem; margin:0 0 8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Закупка на 14 дней</h1>
+  <p class="sub">28.10–10.11, на двоих. Упаковки типичные для Пятёрочки и SPAR, сверяй размер на полке. Галочки сохраняются на этом телефоне.</p>
+  <div class="tabs">
+    <button data-t="s1" class="on">Поездка 1 · 28.10</button>
+    <button data-t="s2">Поездка 2 · 4.11</button>
+    <button data-t="s3">Проверь дома</button>
+  </div>
+  <section id="s1" class="on">
+    <h2>Большая закупка</h2>
+    <p class="lead">Всё долгое, мясо и рыба на две недели, свежее на дни 1–7.</p>
+    <p class="count" data-c="s1"></p>
+    <h3>Овощи и зелень</h3><ul>
+<li><label><input type="checkbox" data-k="1|Капуста белокочанная"><span class="nm">Капуста белокочанная</span><span class="q">≈ 400 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Капуста пекинская"><span class="nm">Капуста пекинская</span><span class="q">2 × кочан ~700 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Картофель"><span class="nm">Картофель</span><span class="q">≈ 1,8 кг</span></label></li>
+<li><label><input type="checkbox" data-k="1|Кинза"><span class="nm">Кинза</span><span class="q">2 × пучок ~40 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Лимоны"><span class="nm">Лимоны</span><span class="q">6 шт</span></label></li>
+<li><label><input type="checkbox" data-k="1|Лук репчатый"><span class="nm">Лук репчатый</span><span class="q">≈ 700 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Морковь"><span class="nm">Морковь</span><span class="q">≈ 2,3 кг</span></label></li>
+<li><label><input type="checkbox" data-k="1|Огурцы"><span class="nm">Огурцы</span><span class="q">12 шт</span></label></li>
+<li><label><input type="checkbox" data-k="1|Перец болгарский красный"><span class="nm">Перец болгарский красный</span><span class="q">10 шт</span></label></li>
+<li><label><input type="checkbox" data-k="1|Петрушка"><span class="nm">Петрушка</span><span class="q">4 × пучок ~40 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Помидоры"><span class="nm">Помидоры</span><span class="q">9 шт</span></label></li>
+<li><label><input type="checkbox" data-k="1|Помидоры черри"><span class="nm">Помидоры черри</span><span class="q">2 × лоток 250 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Руккола"><span class="nm">Руккола</span><span class="q">1 × упаковка 125 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Свёкла"><span class="nm">Свёкла</span><span class="q">≈ 800 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Тыква"><span class="nm">Тыква</span><span class="q">≈ 700 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Укроп"><span class="nm">Укроп</span><span class="q">3 × пучок ~40 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Цукини"><span class="nm">Цукини</span><span class="q">1 шт</span></label></li>
+<li><label><input type="checkbox" data-k="1|Чеснок"><span class="nm">Чеснок</span><span class="q">1 × головка</span><span class="nt">1 головка ≈ 10 зубчиков</span></label></li>
+<li><label><input type="checkbox" data-k="1|Шпинат"><span class="nm">Шпинат</span><span class="q">3 × упаковка 125 г</span></label></li>
+</ul>
+<h3>Фрукты</h3><ul>
+<li><label><input type="checkbox" data-k="1|Апельсины"><span class="nm">Апельсины</span><span class="q">18 шт</span></label></li>
+<li><label><input type="checkbox" data-k="1|Бананы"><span class="nm">Бананы</span><span class="q">3 шт</span></label></li>
+<li><label><input type="checkbox" data-k="1|Груши"><span class="nm">Груши</span><span class="q">2 шт</span></label></li>
+<li><label><input type="checkbox" data-k="1|Клубника свежая"><span class="nm">Клубника свежая</span><span class="q">2 × лоток ~250 г</span><span class="nt">брать в день готовки, хранится 2–3 дня</span></label></li>
+<li><label><input type="checkbox" data-k="1|Яблоки"><span class="nm">Яблоки</span><span class="q">8 шт</span></label></li>
+</ul>
+<h3>Мясо и птица</h3><ul>
+<li><label><input type="checkbox" data-k="1|Бекон"><span class="nm">Бекон</span><span class="q">1 × нарезка 150 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Говядина для стейка (толстый край)"><span class="nm">Говядина для стейка (толстый край)</span><span class="q">≈ 300 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Говядина мякоть (лопатка)"><span class="nm">Говядина мякоть (лопатка)</span><span class="q">≈ 700 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Колбаса докторская"><span class="nm">Колбаса докторская</span><span class="q">1 × нарезка ~200 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Куриная печень"><span class="nm">Куриная печень</span><span class="q">1 × лоток 500 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Куриное филе"><span class="nm">Куриное филе</span><span class="q">≈ 300 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Фарш из индейки"><span class="nm">Фарш из индейки</span><span class="q">2 × лоток 400 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Филе индейки (грудка)"><span class="nm">Филе индейки (грудка)</span><span class="q">≈ 500 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Филе куриного бедра без кожи"><span class="nm">Филе куриного бедра без кожи</span><span class="q">≈ 400 г</span></label></li>
+</ul>
+<h3>Рыба</h3><ul>
+<li><label><input type="checkbox" data-k="1|Скумбрия свежемороженая"><span class="nm">Скумбрия свежемороженая</span><span class="q">2 шт</span><span class="nt">тушка ~300 г без головы</span></label></li>
+<li><label><input type="checkbox" data-k="1|Треска, филе"><span class="nm">Треска, филе</span><span class="q">1 × упаковка 400 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Тунец в собственном соку"><span class="nm">Тунец в собственном соку</span><span class="q">3 × банка 185 г</span><span class="nt">140 г без жидкости</span></label></li>
+<li><label><input type="checkbox" data-k="1|Форель, филе"><span class="nm">Форель, филе</span><span class="q">≈ 400 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Хек, филе"><span class="nm">Хек, филе</span><span class="q">1 × упаковка 400 г</span></label></li>
+</ul>
+<h3>Молочное и яйца</h3><ul>
+<li><label><input type="checkbox" data-k="1|Греческий йогурт 2%"><span class="nm">Греческий йогурт 2%</span><span class="q">3 × банка ~400 г</span><span class="nt">без сахара, с живыми культурами</span></label></li>
+<li><label><input type="checkbox" data-k="1|Йогурт мягкий натуральный"><span class="nm">Йогурт мягкий натуральный</span><span class="q">3 × стаканчик ~125 г</span><span class="nt">без сахара</span></label></li>
+<li><label><input type="checkbox" data-k="1|Йогурт питьевой натуральный"><span class="nm">Йогурт питьевой натуральный</span><span class="q">4 × бутылочка 270 г</span><span class="nt">без сахара</span></label></li>
+<li><label><input type="checkbox" data-k="1|Кефир 1%"><span class="nm">Кефир 1%</span><span class="q">2 × бутылка 900 мл</span></label></li>
+<li><label><input type="checkbox" data-k="1|Молоко 2,5%"><span class="nm">Молоко 2,5%</span><span class="q">2 × бутылка 900 мл</span></label></li>
+<li><label><input type="checkbox" data-k="1|Сливки 10%"><span class="nm">Сливки 10%</span><span class="q">1 × пачка 200 мл</span></label></li>
+<li><label><input type="checkbox" data-k="1|Сметана 15%"><span class="nm">Сметана 15%</span><span class="q">1 × стакан 300 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Снежок 2,5%"><span class="nm">Снежок 2,5%</span><span class="q">1 × бутылка ~950 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Творог 5%"><span class="nm">Творог 5%</span><span class="q">8 × пачка 200 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Яйца"><span class="nm">Яйца</span><span class="q">4 × десяток</span></label></li>
+</ul>
+<h3>Сыры</h3><ul>
+<li><label><input type="checkbox" data-k="1|Гауда"><span class="nm">Гауда</span><span class="q">1 × кусок ~200 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Козий сыр мягкий"><span class="nm">Козий сыр мягкий</span><span class="q">1 × упаковка ~125 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Моцарелла"><span class="nm">Моцарелла</span><span class="q">1 × шарик 125 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Пармезан"><span class="nm">Пармезан</span><span class="q">1 × кусок ~150 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Сулугуни"><span class="nm">Сулугуни</span><span class="q">1 × упаковка ~250 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Фета"><span class="nm">Фета</span><span class="q">2 × упаковка 200 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Халлуми"><span class="nm">Халлуми</span><span class="q">1 × упаковка ~200 г</span></label></li>
+</ul>
+<h3>Хлеб и тесто</h3><ul>
+<li><label><input type="checkbox" data-k="1|Лаваш тонкий"><span class="nm">Лаваш тонкий</span><span class="q">2 × пачка 3 листа</span></label></li>
+<li><label><input type="checkbox" data-k="1|Хлеб зерновой"><span class="nm">Хлеб зерновой</span><span class="q">2 × буханка ~350 г</span><span class="nt">с цельным зерном и семечками; лишнее нарезать и в морозилку; 1 сразу в морозилку как запас</span></label></li>
+</ul>
+<h3>Крупы, макароны, бобовые</h3><ul>
+<li><label><input type="checkbox" data-k="1|Булгур"><span class="nm">Булгур</span><span class="q">1 × пачка 450 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Гранола без сахара"><span class="nm">Гранола без сахара</span><span class="q">1 × пачка ~300 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Гречка"><span class="nm">Гречка</span><span class="q">1 × пачка 900 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Красная чечевица"><span class="nm">Красная чечевица</span><span class="q">1 × пачка 450 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Макароны (спагетти)"><span class="nm">Макароны (спагетти)</span><span class="q">1 × пачка 450 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Нут консервированный"><span class="nm">Нут консервированный</span><span class="q">1 × банка 400 г (240 г без жидкости)</span></label></li>
+<li><label><input type="checkbox" data-k="1|Овсяные хлопья"><span class="nm">Овсяные хлопья</span><span class="q">1 × пачка 400 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Птитим"><span class="nm">Птитим</span><span class="q">2 × пачка ~250 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Пшено"><span class="nm">Пшено</span><span class="q">1 × пачка 800 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Рис длиннозёрный"><span class="nm">Рис длиннозёрный</span><span class="q">1 × пачка 900 г</span></label></li>
+</ul>
+<h3>Орехи, семечки, сухофрукты</h3><ul>
+<li><label><input type="checkbox" data-k="1|Грецкие орехи"><span class="nm">Грецкие орехи</span><span class="q">1 × пачка 150 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Изюм"><span class="nm">Изюм</span><span class="q">1 × пачка 200 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Кунжут"><span class="nm">Кунжут</span><span class="q">1 × пачка 100 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Семечки подсолнечника очищенные"><span class="nm">Семечки подсолнечника очищенные</span><span class="q">1 × пачка 100 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Тыквенные семечки"><span class="nm">Тыквенные семечки</span><span class="q">1 × пачка 100 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Финики"><span class="nm">Финики</span><span class="q">1 × пачка ~200 г (~25 шт)</span></label></li>
+</ul>
+<h3>Сладкое и выпечка</h3><ul>
+<li><label><input type="checkbox" data-k="1|Печенье савоярди"><span class="nm">Печенье савоярди</span><span class="q">1 × пачка 200 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Шоколад тёмный 70%"><span class="nm">Шоколад тёмный 70%</span><span class="q">1 × плитка 90 г</span></label></li>
+</ul>
+<h3>Бакалея и соусы</h3><ul>
+<li><label><input type="checkbox" data-k="1|Оливки без косточек"><span class="nm">Оливки без косточек</span><span class="q">1 × банка ~300 г (180 г без рассола)</span></label></li>
+<li><label><input type="checkbox" data-k="1|Томатная паста"><span class="nm">Томатная паста</span><span class="q">1 × банка 270 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Томаты в собственном соку"><span class="nm">Томаты в собственном соку</span><span class="q">2 × банка 400 г</span></label></li>
+</ul>
+<h3>Заморозка</h3><ul>
+<li><label><input type="checkbox" data-k="1|Вишня замороженная"><span class="nm">Вишня замороженная</span><span class="q">1 × пакет 300 г</span></label></li>
+<li><label><input type="checkbox" data-k="1|Слоёное тесто бездрожжевое"><span class="nm">Слоёное тесто бездрожжевое</span><span class="q">1 × пачка 500 г (2 пласта)</span></label></li>
+<li><label><input type="checkbox" data-k="1|Ягоды замороженные (смесь)"><span class="nm">Ягоды замороженные (смесь)</span><span class="q">2 × пакет 300 г</span></label></li>
+</ul>
+    <div class="box"><b>Сразу в морозилку:</b> фарш индейки (вторая упаковка), филе индейки, куриное филе, куриные бёдра, печень, говядина для стейка и мякоть (кроме 140 г на Д2), форель, треска, хек, скумбрия, 1 буханка хлеба, слоёное тесто.</div>
+  </section>
+  <section id="s2">
+    <h2>Докупка свежего</h2>
+    <p class="lead">Молочное, сыр, хлеб, зелень, овощи и фрукты на дни 8–14.</p>
+    <p class="count" data-c="s2"></p>
+    <h3>Овощи и зелень</h3><ul>
+<li><label><input type="checkbox" data-k="2|Базилик"><span class="nm">Базилик</span><span class="q">1 × пучок ~30 г</span></label></li>
+<li><label><input type="checkbox" data-k="2|Кинза"><span class="nm">Кинза</span><span class="q">1 × пучок ~40 г</span></label></li>
+<li><label><input type="checkbox" data-k="2|Огурцы"><span class="nm">Огурцы</span><span class="q">6 шт</span></label></li>
+<li><label><input type="checkbox" data-k="2|Перец болгарский красный"><span class="nm">Перец болгарский красный</span><span class="q">6 шт</span></label></li>
+<li><label><input type="checkbox" data-k="2|Петрушка"><span class="nm">Петрушка</span><span class="q">4 × пучок ~40 г</span></label></li>
+<li><label><input type="checkbox" data-k="2|Помидоры"><span class="nm">Помидоры</span><span class="q">11 шт</span></label></li>
+<li><label><input type="checkbox" data-k="2|Помидоры черри"><span class="nm">Помидоры черри</span><span class="q">2 × лоток 250 г</span></label></li>
+<li><label><input type="checkbox" data-k="2|Руккола"><span class="nm">Руккола</span><span class="q">2 × упаковка 125 г</span></label></li>
+<li><label><input type="checkbox" data-k="2|Салат романо"><span class="nm">Салат романо</span><span class="q">1 × кочан</span></label></li>
+<li><label><input type="checkbox" data-k="2|Укроп"><span class="nm">Укроп</span><span class="q">3 × пучок ~40 г</span></label></li>
+<li><label><input type="checkbox" data-k="2|Шампиньоны"><span class="nm">Шампиньоны</span><span class="q">1 × лоток 400 г</span></label></li>
+<li><label><input type="checkbox" data-k="2|Шпинат"><span class="nm">Шпинат</span><span class="q">2 × упаковка 125 г</span></label></li>
+</ul>
+<h3>Фрукты</h3><ul>
+<li><label><input type="checkbox" data-k="2|Апельсины"><span class="nm">Апельсины</span><span class="q">17 шт</span></label></li>
+<li><label><input type="checkbox" data-k="2|Бананы"><span class="nm">Бананы</span><span class="q">5 шт</span></label></li>
+<li><label><input type="checkbox" data-k="2|Клубника свежая"><span class="nm">Клубника свежая</span><span class="q">2 × лоток ~250 г</span><span class="nt">брать в день готовки, хранится 2–3 дня</span></label></li>
+</ul>
+<h3>Мясо и птица</h3><ul>
+<li><label><input type="checkbox" data-k="2|Ветчина из индейки"><span class="nm">Ветчина из индейки</span><span class="q">1 × нарезка ~150 г</span></label></li>
+</ul>
+<h3>Рыба</h3><ul>
+<li><label><input type="checkbox" data-k="2|Сельдь слабосолёная, филе"><span class="nm">Сельдь слабосолёная, филе</span><span class="q">1 × упаковка 250 г</span><span class="nt">без масла и уксуса</span></label></li>
+</ul>
+<h3>Молочное и яйца</h3><ul>
+<li><label><input type="checkbox" data-k="2|Греческий йогурт 2%"><span class="nm">Греческий йогурт 2%</span><span class="q">3 × банка ~400 г</span><span class="nt">без сахара, с живыми культурами</span></label></li>
+<li><label><input type="checkbox" data-k="2|Йогурт питьевой натуральный"><span class="nm">Йогурт питьевой натуральный</span><span class="q">4 × бутылочка 270 г</span><span class="nt">без сахара</span></label></li>
+<li><label><input type="checkbox" data-k="2|Кефир 1%"><span class="nm">Кефир 1%</span><span class="q">3 × бутылка 900 мл</span></label></li>
+<li><label><input type="checkbox" data-k="2|Молоко 2,5%"><span class="nm">Молоко 2,5%</span><span class="q">1 × бутылка 900 мл</span></label></li>
+<li><label><input type="checkbox" data-k="2|Сметана 15%"><span class="nm">Сметана 15%</span><span class="q">1 × стакан 300 г</span></label></li>
+<li><label><input type="checkbox" data-k="2|Снежок 2,5%"><span class="nm">Снежок 2,5%</span><span class="q">1 × бутылка ~950 г</span></label></li>
+<li><label><input type="checkbox" data-k="2|Творог 5%"><span class="nm">Творог 5%</span><span class="q">6 × пачка 200 г</span></label></li>
+</ul>
+<h3>Сыры</h3><ul>
+<li><label><input type="checkbox" data-k="2|Моцарелла"><span class="nm">Моцарелла</span><span class="q">1 × шарик 125 г</span></label></li>
+<li><label><input type="checkbox" data-k="2|Сулугуни"><span class="nm">Сулугуни</span><span class="q">1 × упаковка ~250 г</span></label></li>
+<li><label><input type="checkbox" data-k="2|Фета"><span class="nm">Фета</span><span class="q">2 × упаковка 200 г</span></label></li>
+</ul>
+<h3>Хлеб и тесто</h3><ul>
+<li><label><input type="checkbox" data-k="2|Хлеб зерновой"><span class="nm">Хлеб зерновой</span><span class="q">1 × буханка ~350 г</span><span class="nt">с цельным зерном и семечками; лишнее нарезать и в морозилку</span></label></li>
+</ul>
+  </section>
+  <section id="s3">
+    <h2>Проверь дома</h2>
+    <p class="lead">Бери, только если нет или осталось мало. Манго уже есть.</p>
+    <ul><li><label><input type="checkbox" data-k="p|Желатин"><span class="nm">Желатин</span><span class="q">1 × пакетик 10 г</span></label></li>
+<li><label><input type="checkbox" data-k="p|Какао-порошок"><span class="nm">Какао-порошок</span><span class="q">1 × пачка 100 г</span></label></li>
+<li><label><input type="checkbox" data-k="p|Мёд"><span class="nm">Мёд</span><span class="q">1 × банка 250 г</span></label></li>
+<li><label><input type="checkbox" data-k="p|Бальзамический уксус"><span class="nm">Бальзамический уксус</span><span class="q">1 × бутылка 250 мл</span></label></li>
+<li><label><input type="checkbox" data-k="p|Масло оливковое"><span class="nm">Масло оливковое</span><span class="q">1 × бутылка 500 мл</span></label></li>
+<li><label><input type="checkbox" data-k="p|Мука"><span class="nm">Мука</span><span class="q">1 × пачка 1 кг</span></label></li></ul>
+    <div class="box"><b>Специи:</b> соль, чёрный перец, паприка (лучше копчёная), зира, хмели-сунели, корица, лавровый лист, орегано, молотый кориандр.</div>
+  </section>
+  <button class="reset" id="reset">Снять все галочки</button>
+</div>
+<script>
+(function () {
+  var KEY = 'pokupki-2810';
+  var st = {};
+  try { st = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { st = {}; }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} }
+  var boxes = document.querySelectorAll('input[type=checkbox]');
+  function count() {
+    ['s1', 's2'].forEach(function (id) {
+      var all = document.querySelectorAll('#' + id + ' input'), done = 0;
+      all.forEach(function (b) { if (b.checked) done++; });
+      var el = document.querySelector('[data-c=' + id + ']'); if (el) el.textContent = 'Взято ' + done + ' из ' + all.length;
+    });
+  }
+  boxes.forEach(function (b) {
+    b.checked = !!st[b.dataset.k];
+    b.addEventListener('change', function () { st[b.dataset.k] = b.checked; save(); count(); });
+  });
+  document.querySelectorAll('.tabs button').forEach(function (t) {
+    t.addEventListener('click', function () {
+      document.querySelectorAll('.tabs button').forEach(function (x) { x.classList.toggle('on', x === t); });
+      document.querySelectorAll('section').forEach(function (s) { s.classList.toggle('on', s.id === t.dataset.t); });
+      window.scrollTo(0, 0);
+    });
+  });
+  document.getElementById('reset').addEventListener('click', function () {
+    st = {}; save(); boxes.forEach(function (b) { b.checked = false; }); count();
+  });
+  count();
+})();
+</script>
+</body>
+</html>
