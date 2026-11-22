@@ -39,9 +39,9 @@
 </head>
 <body>
 <div class="wrap">
-  <h1>Дневник</h1>
+  <h1>Дневник 23.11–06.12</h1>
   <p class="sub">Раз в день вечером, минута. Голод: 0 — нет, 1 — лёгкий фоновый, 2 — заметный, 3 — сильный. Данные хранятся только на этом телефоне, итог можно скопировать тренеру.</p>
-  <div class="nav"><a href="index.html">Что приготовить</a><a href="menu.html">Меню</a><a href="pokupki.html">Закупка</a></div>
+  <div class="nav"><a href="index.html">Что приготовить</a><a href="menu.html">Меню</a><a href="pokupki.html">Закупка</a><a href="dnevnik-1411.html">Прошлый дневник 14–27.11</a></div>
   <div class="tabs" id="tabs"></div>
   <div id="form"></div>
   <div class="box" id="sum"></div>
@@ -50,8 +50,8 @@
 </div>
 <script>
 (function () {
-  var DATES = ["сб 14.11", "вс 15.11", "пн 16.11", "вт 17.11", "ср 18.11", "чт 19.11", "пт 20.11", "сб 21.11", "вс 22.11", "пн 23.11", "вт 24.11", "ср 25.11", "чт 26.11", "пт 27.11"];
-  var KEY = 'dnevnik-1411';
+  var DATES = ["пн 23.11", "вт 24.11", "ср 25.11", "чт 26.11", "пт 27.11", "сб 28.11", "вс 29.11", "пн 30.11", "вт 01.12", "ср 02.12", "чт 03.12", "пт 04.12", "сб 05.12", "вс 06.12"];
+  var KEY = 'dnevnik-2311';
   var st = {};
   try { st = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { st = {}; }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} }
@@ -63,7 +63,7 @@
     {k: 'ves', t: 'Вес утром, кг', h: 'по желанию', n: true, step: '0.1'},
     {k: 'zam', t: 'Заметка', h: 'что съела не по меню, самочувствие', txt: true}
   ];
-  var start = new Date(2026, 10, 14);
+  var start = new Date(2026, 10, 23);
   var today = Math.floor((new Date() - start) / 86400000) + 1;
   var cur = (today >= 1 && today <= 14) ? today : 1;
   var tabs = document.getElementById('tabs'), form = document.getElementById('form');
